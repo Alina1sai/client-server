@@ -25,7 +25,8 @@ def main():
     # Запрашиваем имя пользователя
     username = input('Введите имя пользователя: ')
     send_message(client_socket, f'login {username}')
-
+    response = receive_message(client_socket)
+    print(response)
     # Основной цикл клиента
     while True:
         # Запрашиваем команду у пользователя
