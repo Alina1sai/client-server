@@ -32,7 +32,7 @@ def main():
         command = input('Введите команду: ')
 
         # Отправляем команду на сервер
-        send_message(client_socket, command)
+        send_message(client_socket,  f'{command}' )
 
         # Получаем ответ от сервера и выводим на экран
         response = receive_message(client_socket)
