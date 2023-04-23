@@ -40,22 +40,23 @@ class EquipmentHandler(socketserver.BaseRequestHandler):
 
         elif command == 'add_equipment':
             # Обработка команды add_equipment
-            equipment_type = input()
+            equipment_type = args[0]
             add_equipment(equipment_type)
             return f'Оборудование {equipment_type} добавлено'
 
         elif command == 'get_equipment_by_type':
             # Обработка команды get_equipment_by_type
-            equipment_type = input()
+            equipment_type = args[0]
             return get_equipment_by_type(equipment_type)
 
         elif command == 'get_schedule':
             # Обработка команды get_schedule
-            equipment_type = input()
+            equipment_type = args[0]
             return get_schedule(equipment_type)
 
         elif command == 'register':
             # Обработка команды register
+            # Формат ввода записи на время  yy-mm-dd-hh:mm:ss yy-mm-dd-hh:mm:ss
             user_id, equipment_id, start_time, end_time = args
             if register_user_to_equipment(user_id, equipment_id, start_time, end_time):
                 return f'Оборудование забронировано с {start_time} до {end_time}'
