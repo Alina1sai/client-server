@@ -46,12 +46,12 @@ class EquipmentHandler(socketserver.BaseRequestHandler):
 
         elif command == 'get_equipment_by_type':
             # Обработка команды get_equipment_by_type
-            equipment_type = input()
+            equipment_type = args[0]
             return get_equipment_by_type(equipment_type)
 
         elif command == 'get_schedule':
             # Обработка команды get_schedule
-            equipment_type = input()
+            equipment_type = args[0]
             return get_schedule(equipment_type)
 
         elif command == 'register':
