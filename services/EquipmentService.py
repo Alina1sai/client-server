@@ -15,3 +15,10 @@ def get_equipments():
         result = cursor.fetchall()
         return "\n".join(map(str, result))
 
+## Вывод оборудования по типу(названию)
+def get_equipment_by_type(equipment_type):
+    get_equipment_query = f"SELECT * FROM {EQUIPMENT_TABLE} WHERE type = '{equipment_type}'"
+    with mydb.cursor() as cursor:
+        cursor.execute(get_equipment_query)
+        result = cursor.fetchone()
+        return " ".join(map(str, result))
