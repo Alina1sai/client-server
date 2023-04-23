@@ -7,4 +7,11 @@ def add_equipment(type):
         cursor.execute(add_equipment_query, type)
         mydb.commit()
 
+## Вывод всего оборудования
+def get_equipments():
+    get_equipment_query = f"SELECT * FROM {EQUIPMENT_TABLE}"
+    with mydb.cursor() as cursor:
+        cursor.execute(get_equipment_query)
+        result = cursor.fetchall()
+        return "\n".join(map(str, result))
 
