@@ -40,7 +40,7 @@ class EquipmentHandler(socketserver.BaseRequestHandler):
 
         elif command == 'add_equipment':
             # Обработка команды add_equipment
-            equipment_type = input()
+            equipment_type = args[0]
             add_equipment(equipment_type)
             return f'Оборудование {equipment_type} добавлено'
 
